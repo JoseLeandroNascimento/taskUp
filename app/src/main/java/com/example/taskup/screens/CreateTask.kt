@@ -2,12 +2,15 @@ package com.example.taskup.screens
 
 import android.widget.Toast
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.gestures.Orientation
+import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
@@ -36,6 +39,7 @@ fun CreateTaskScreen(modifier: Modifier = Modifier) {
     val focusManager = LocalFocusManager.current
     var nameTask by remember { mutableStateOf("") }
     var descriptionTask by remember { mutableStateOf("") }
+    var scroll = rememberScrollState(0)
     val context = LocalContext.current
 
     fun isValid(): Boolean {
@@ -53,6 +57,7 @@ fun CreateTaskScreen(modifier: Modifier = Modifier) {
     Column(
         modifier = modifier
             .fillMaxSize()
+            .scrollable(state = scroll, orientation = Orientation.Vertical)
             .clickable(
                 indication = null,
                 interactionSource = remember { MutableInteractionSource() }
