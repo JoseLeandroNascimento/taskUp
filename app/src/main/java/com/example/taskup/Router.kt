@@ -9,7 +9,7 @@ import com.example.taskup.screens.CreateTaskScreen
 import com.example.taskup.screens.HomeScreen
 
 @Composable
-fun navHost(
+fun NavHostApp(
     modifier: Modifier = Modifier,
     navController: NavHostController,
 ) {
