@@ -2,5 +2,6 @@
     <string name="app_name">TaskUp</string>
     <string name="create_task_label_name">Nome</string>
     <string name="create_task_label_description">Descrição</string>
+    <string name="create_task_label_due_date">Data de vencimento</string>
     <string name="create_task_btn_text_save">Salvar</string>
 </resources>
