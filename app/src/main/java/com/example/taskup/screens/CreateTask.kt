@@ -30,11 +30,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.example.taskup.R
 import com.example.taskup.ui.theme.TaskUpTheme
 
 @Composable
-fun CreateTaskScreen(modifier: Modifier = Modifier) {
+fun CreateTaskScreen(modifier: Modifier = Modifier,navController: NavController? = null) {
 
     val focusManager = LocalFocusManager.current
     var nameTask by remember { mutableStateOf("") }
