@@ -24,10 +24,8 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.rememberNavController
 import com.example.taskup.components.SidebarDrawer
-
 import com.example.taskup.ui.theme.TaskUpTheme
 import kotlinx.coroutines.launch
 
@@ -60,7 +58,7 @@ class MainActivity : ComponentActivity() {
                         topBar = {
                             TopAppBar(
                                 colors = TopAppBarDefaults.topAppBarColors(
-                                    containerColor = if(isSystemInDarkTheme()) MaterialTheme.colorScheme.surface  else  Color.White
+                                    containerColor = if (isSystemInDarkTheme()) MaterialTheme.colorScheme.surface else Color.White
                                 ),
                                 title = { Text(text = stringResource(id = R.string.app_name)) },
                                 navigationIcon = {
@@ -83,8 +81,7 @@ class MainActivity : ComponentActivity() {
 
                         NavHostApp(
                             modifier = Modifier
-                                .padding(innerPadding)
-                                .padding(horizontal = 8.dp, vertical = 8.dp),
+                                .padding(innerPadding),
                             navController = navController
                         )
 
