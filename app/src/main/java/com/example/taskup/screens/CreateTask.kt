@@ -47,6 +47,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.taskup.R
+import com.example.taskup.components.InputText
 import com.example.taskup.ui.theme.TaskUpTheme
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -96,27 +97,22 @@ fun CreateTaskScreen(modifier: Modifier = Modifier, navController: NavController
 
         ) {
 
-        OutlinedTextField(
+        InputText(
             modifier = Modifier.fillMaxWidth(),
             value = nameTask,
             onValueChange = { nameTask = it },
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
-            label = {
-                Text(text = stringResource(id = R.string.create_task_label_name))
-            }
+            label = stringResource(id = R.string.create_task_label_name)
         )
 
-        OutlinedTextField(
+        InputText(
             modifier = Modifier.fillMaxWidth(),
             value = descriptionTask,
             maxLines = 3,
             minLines = 3,
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
             onValueChange = { descriptionTask = it },
-            label = {
-                Text(text = stringResource(id = R.string.create_task_label_description))
-            }
+            label = stringResource(id = R.string.create_task_label_description)
         )
+
 
         OutlinedTextField(
             modifier = Modifier.fillMaxWidth(),
